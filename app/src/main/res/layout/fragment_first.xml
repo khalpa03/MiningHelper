@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.first.FirstFragment">
+
+<androidx.cardview.widget.CardView
+    android:id="@+id/cardview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#E7DDF7"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    android:layout_margin="16dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".screens.first.FirstFragment">
+
+
+        <TextView
+            android:id="@+id/text_hashrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:text="Хешрейт"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/hashrate_miner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:hint="Введите хешрейт"
+            android:inputType="numberDecimal"
+            app:layout_constraintBottom_toTopOf="@+id/text_power"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_hashrate" />
+
+        <TextView
+            android:id="@+id/text_power"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Потребляемая мощность"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hashrate_miner" />
+
+        <EditText
+            android:id="@+id/power_miner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:hint="Введите мощность"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_power" />
+
+        <TextView
+            android:id="@+id/text_w"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Вт"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/power_miner"
+            app:layout_constraintTop_toBottomOf="@+id/text_power" />
+
+
+        <TextView
+            android:id="@+id/text_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="3dp"
+            android:text="Валюта"
+            app:layout_constraintBottom_toTopOf="@id/currency_spinner"
+            app:layout_constraintStart_toEndOf="@id/text_power" />
+
+        <Spinner
+            android:id="@+id/currency_spinner"
+            android:layout_width="133dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="-30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_power" />
+
+        <RadioGroup
+            android:id="@+id/tip_options"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/option_TH"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@id/hashrate_miner"
+            app:layout_constraintTop_toBottomOf="@id/text_hashrate">
+
+
+            <RadioButton
+                android:id="@+id/option_TH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TH/s"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/option_MH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MH/s"
+                android:textStyle="bold" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/text_tariff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Затраты на электроэнергию"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/power_miner" />
+
+        <EditText
+            android:id="@+id/tariff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:hint="Введите тариф"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_tariff" />
+
+        <TextView
+            android:id="@+id/text_currency_w"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/tariff"
+            app:layout_constraintTop_toBottomOf="@+id/text_tariff"
+            tools:text="Тариф электр." />
+
+        <Button
+            android:id="@+id/calculate_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Вычислить"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tariff" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/text_income"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Доход в день: "
+        android:visibility="invisible"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardview" />
+
+    <TextView
+        android:id="@+id/text_btc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        app:layout_constraintStart_toEndOf="@+id/text_income"
+        app:layout_constraintTop_toBottomOf="@id/cardview"
+        tools:text="Кол-во BTC" />
+
+    <TextView
+        android:id="@+id/text_expenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Затраты на электр-во: "
+        android:visibility="invisible"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_income" />
+
+    <TextView
+        android:id="@+id/text_electric"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:maxLines="3"
+        android:textSize="18sp"
+        android:textColor="#F62213"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_expenses"
+        app:layout_constraintTop_toBottomOf="@+id/text_btc"
+        tools:text="Сумма за электр-во" />
+
+    <TextView
+        android:id="@+id/text_profit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Чистая прибыль: "
+        android:visibility="invisible"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_expenses" />
+
+    <TextView
+        android:id="@+id/text_profitbtc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:maxLines="3"
+        android:textColor="#4CAF50"
+        app:layout_constraintStart_toEndOf="@+id/text_profit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_electric"
+        tools:text="Сумма за электр-во" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

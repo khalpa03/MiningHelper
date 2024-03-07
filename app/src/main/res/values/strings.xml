@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MiningHelper</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_income">"%s ₿"</string>
+    <string name="str_exp_rub">"%s ₽"</string>
+    <string name="str_exp_usd">"%s 💲"</string>
+    <string-array name="currency_array">
+        <item>RUB</item>
+        <item>USD</item>
+    </string-array>
+</resources>

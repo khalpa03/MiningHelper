@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/name_EditView"
+        android:layout_width="346dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        tools:text="lsdkfj;sdjkfklsdjfklsdjfl;"
+        android:hint="Введите название"/>
+
+    <TextView
+        android:id="@+id/Price_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Цена (RUB):"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_EditView" />
+
+    <EditText
+        android:id="@+id/Price_EditView"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Price_TextView"
+        android:gravity="center"
+        android:inputType="number"
+        tools:text="116000"
+        android:hint="0"/>
+
+    <TextView
+        android:id="@+id/Power_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:text="Питание (Вт):"
+        app:layout_constraintStart_toEndOf="@+id/Price_TextView"
+        app:layout_constraintTop_toBottomOf="@id/name_EditView" />
+
+    <EditText
+        android:id="@+id/Power_EditView"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="45dp"
+        app:layout_constraintStart_toEndOf="@+id/Price_EditView"
+        app:layout_constraintTop_toBottomOf="@+id/Power_TextView"
+        android:gravity="center"
+        android:inputType="number"
+        tools:text="3500"
+        android:hint="0"/>
+
+    <TextView
+        android:id="@+id/Hashrate_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:text="Мощность (TH/s):"
+        app:layout_constraintStart_toEndOf="@+id/Power_TextView"
+        app:layout_constraintTop_toBottomOf="@id/name_EditView" />
+
+    <EditText
+        android:id="@+id/Hashrate_EditView"
+        android:layout_width="70dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="70dp"
+        app:layout_constraintStart_toEndOf="@+id/Power_EditView"
+        app:layout_constraintTop_toBottomOf="@+id/Hashrate_TextView"
+        android:gravity="center"
+        android:inputType="number"
+        tools:text="116"
+        android:hint="0"/>
+
+    <ImageView
+        android:id="@+id/imageDelete"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="370dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
+
+    <ImageView
+        android:id="@+id/imageSave"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="370dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_save" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="4dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
